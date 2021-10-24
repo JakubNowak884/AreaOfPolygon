@@ -1,0 +1,58 @@
+@options
+@packages
+@argfile
+-encoding
+'UTF-8'
+-protected
+-source
+'11'
+-sourcepath
+'C:/Users/Kuba/source/repos/AreaOfPolygon/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2021. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/Kuba/source/repos/AreaOfPolygon/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'AreaOfPolygon 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/en/java/javase/11/docs/api' 'C:/Users/Kuba/source/repos/AreaOfPolygon/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'AreaOfPolygon 1.0-SNAPSHOT API'
+controller
+model
+view
+'C:/Users/Kuba/source/repos/AreaOfPolygon/src/main/java/controller/Main.java'
+'C:/Users/Kuba/source/repos/AreaOfPolygon/src/main/java/model/ConcavePolygonException.java'
+'C:/Users/Kuba/source/repos/AreaOfPolygon/src/main/java/model/Point.java'
+'C:/Users/Kuba/source/repos/AreaOfPolygon/src/main/java/model/Polygon.java'
+'C:/Users/Kuba/source/repos/AreaOfPolygon/src/main/java/model/Triangle.java'
+'C:/Users/Kuba/source/repos/AreaOfPolygon/src/main/java/view/View.java'
+C:\Users\Kuba\source\repos\AreaOfPolygon\src\main\java = 1634890276800
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\allclasses-index.html = 1634978132292
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\allclasses.html = 1634978132307
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\allpackages-index.html = 1634978132295
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\constant-values.html = 1634978132029
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\deprecated-list.html = 1634978132304
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\element-list = 1634978131958
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\help-doc.html = 1634978132345
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\index-all.html = 1634978132283
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\index.html = 1634978132312
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\member-search-index.js = 1634978132279
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\member-search-index.zip = 1634978132280
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\overview-summary.html = 1634978132340
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\overview-tree.html = 1634978132182
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\package-search-index.js = 1634978132240
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\package-search-index.zip = 1634978132263
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\script.js = 1634978132354
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\search.js = 1634978132358
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\serialized-form.html = 1634978132072
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\stylesheet.css = 1634978132351
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\type-search-index.js = 1634978132265
+C:\Users\Kuba\source\repos\AreaOfPolygon\target\site\apidocs\type-search-index.zip = 1634978132267

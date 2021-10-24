@@ -1,39 +1,93 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
+import model.Point;
 import model.Polygon;
+import model.ConcavePolygonException;
 import view.View;
+import java.util.*;
 
 /**
  *
  * @author Jakub Nowak gr 5
+ * @version 1.0
  */
 public class Main 
 {
+    /**
+     * The user should enter the coordinations of the points one by one starting by first point position on the x axis. The points should be given using the right hand rule.
+     * When the points are given incorrectly, program asks for number of angles of a polygon, and then for each point.
+     */
     public static void main(String args[])
     {
         View view = new View();
-        if (args == null)
+        Scanner scan = new Scanner(System.in);
+        Point points[];
+        if (args == null || args.length == 0 || args.length % 2 != 0 || args.length < 3)
         {
-            
-        }
-        if (args.length % 2 == 0)
-        {
-            float points[] = new float[args.length];
-            for (int i = 0; i < args.length; i++)
+            int numberOfPoints = 0;
+            while (numberOfPoints < 3)
             {
-                points[i] = Float.parseFloat(args[i]);
+                view.showMessage("Invalid points. Type number of polygon angles (higher or equal 3): ");
+            try
+            {
+                numberOfPoints = scan.nextInt();
             }
+            catch(InputMismatchException e)
+            {
+                view.showError("Error: this is not a number (" + e.getMessage() + ")");
+                return;
+            }
+            }
+            points = new Point[numberOfPoints];
             
-            Polygon polygon = new Polygon(points);
-            float result = polygon.calculateArea();
-            view.showResult(Float.toString(result));
+            for (int i = 0; i < numberOfPoints; i++)
+            {
+                view.showMessage("Type x and y of " + Integer.toString(i + 1) + " point: ");
+                float x = 0;
+                float y = 0;
+                try
+                {
+                    x = scan.nextFloat();
+                    y = scan.nextFloat();
+                }
+                catch(InputMismatchException e)
+                {
+                    view.showError("Error: this is not a number (" + e.getMessage() + ")");
+                    return;
+                }
+                points[i] = new Point(x, y);
+            }
         }
         else
         {
-            view.showError("odd number of points");
+            points = new Point[args.length/2];
+            for (int i = 0; i < args.length; i += 2)
+            {
+                float x = 0;
+                float y = 0;
+                try
+                {
+                    x = Float.parseFloat(args[i]);
+                    y = Float.parseFloat(args[i + 1]);
+                }
+                 catch(InputMismatchException e)
+                {
+                    view.showError("Error: this is not a number (" + e.getMessage() + ")");
+                    return;
+                }
+                 points[i/2] = new Point(x, y);
+            }
         }
+        Polygon polygon = new Polygon(points);
+        float result = 0;
+        try
+        {
+            result = polygon.area();
+        }
+        catch (ConcavePolygonException e)
+        {
+            view.showError(e.getMessage() + Double.toString(e.getSumOfAngles()));
+            return;
+        }
+        view.showMessage("Area of polygon: " + Float.toString(result));
     }
 }

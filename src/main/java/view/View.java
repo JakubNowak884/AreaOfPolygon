@@ -1,29 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package view;
 
 /**
+ * View class shows given messages in console.
  *
  * @author Jakub Nowak gr 5
+ * @version 1.0
  */
 public class View {
-    /**
-     * 
-     * @param result area of polygon
-     */
-    public void showResult(String result)
+     /**
+      * Class constructor.
+      */
+    public View() {}
+     /**
+      * Method shows message in console using standard output stream.
+      * 
+      * @param message message to show
+      */
+    public void showMessage(String message)
     {
-        System.out.println("Area of given polygon: " + result);
+        System.out.println(message);
     }
-    public 
     /**
+     * Method shows error in console using error output stream.
      * 
-     * @param error error
+     * @param error error to show
      */
     public void showError(String error)
     {
-        System.out.println("Error :" + error);
+        System.err.println(error);
     }
 }
