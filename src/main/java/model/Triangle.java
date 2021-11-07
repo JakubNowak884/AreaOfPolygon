@@ -30,6 +30,9 @@ public class Triangle {
     }
     /** 
     * Class constructor forming a triangle from three given points in a 2d space.
+    * @param a first point
+    * @param b second point
+    * @param c third point
     */
     public Triangle(Point a, Point b, Point c)
     {
@@ -39,6 +42,7 @@ public class Triangle {
     }
     /** 
     * Method calculating area of a triangle.
+    * @return area of a triangle
     */
     public float area()
     {

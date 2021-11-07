@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 /**
@@ -47,10 +43,7 @@ public class Polygon {
       */
     private boolean polygonIsConvex(double sumOfAngles)
     {
-        if (sumOfAngles == (points.length-2)*180)
-            return true;
-        else
-            return false;
+        return (sumOfAngles == (points.length-2)*180);
     }
     /** 
      * Class constructor forming a 2x2 square with the bottom left corner at the coordinate system origin.
@@ -69,6 +62,7 @@ public class Polygon {
     }
     /** 
      * Class constructor forming a polygon from given points.
+     * @param points points of polygon
      */        
     public Polygon(Point points[])
     {
@@ -80,8 +74,8 @@ public class Polygon {
         }
     }
     /**
-     * Method calculates area of a polygon. Throws an exception when polygon is concave, which means its area cannot be calculated.
-     * 
+     * Method calculates area of a polygon.
+     * @throws ConcavePolygonException when polygon is concave, which means its area cannot be calculated.
      * @return area of a polygon
      */
     public float area() throws ConcavePolygonException

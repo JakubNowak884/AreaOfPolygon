@@ -25,6 +25,8 @@ public class Point {
     }
     /** 
      * Class constructor forming a point from coordinations.
+     * @param x position on x axis
+     * @param y position on y axis
      */
     public Point(float x, float y)
     {
@@ -33,6 +35,7 @@ public class Point {
     }
     /** 
      * Method returns position of a point on the x axis.
+     * @return posistion on x axis
      */
     public float getX()
     {
@@ -40,6 +43,7 @@ public class Point {
     }
     /** 
      * Method returns position of a point on the y axis.
+     * @return position on y axis
      */
     public float getY()
     {

@@ -13,8 +13,8 @@ import java.util.*;
 public class Main 
 {
     /**
-     * The user should enter the coordinations of the points one by one starting by first point position on the x axis. The points should be given using the right hand rule.
-     * When the points are given incorrectly, program asks for number of angles of a polygon, and then for each point.
+     * Program calculates area of polygon by the points given by user. When the points are given incorrectly, program asks for number of angles of a polygon, and then for each point.
+     * @param args The user should enter the coordinations of the points one by one starting by first point position on the x axis. The points should be given using the right hand rule.
      */
     public static void main(String args[])
     {

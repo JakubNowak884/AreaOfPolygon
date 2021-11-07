@@ -17,6 +17,7 @@ public class ConcavePolygonException extends Exception {
     public ConcavePolygonException() {};
     /** 
      * Class constructor with a message.
+     * @param message message of an exception
      */
     public ConcavePolygonException(String message)
     {
@@ -24,6 +25,8 @@ public class ConcavePolygonException extends Exception {
     }
     /** 
      * Class constructor with a message and sum of angles.
+     * @param message message of an exception
+     * @param sumOfAngles sum of angles of a concave polygon
      */
     public ConcavePolygonException(String message, double sumOfAngles)
     {
@@ -32,6 +35,7 @@ public class ConcavePolygonException extends Exception {
     }
     /** 
      * Method returns sum of angles.
+     * @return sum of angles of a concave polygon
      */
     public double getSumOfAngles()
     {
