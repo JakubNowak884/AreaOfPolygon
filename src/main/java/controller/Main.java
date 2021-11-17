@@ -20,8 +20,8 @@ public class Main
     {
         View view = new View();
         Scanner scan = new Scanner(System.in);
-        Point points[];
-        if (args == null || args.length == 0 || args.length % 2 != 0 || args.length < 3)
+        List<Point> points = new ArrayList<>();
+        if (args.length == 0 || args.length % 2 != 0 || args.length < 3)
         {
             int numberOfPoints = 0;
             while (numberOfPoints < 3)
@@ -37,13 +37,12 @@ public class Main
                 return;
             }
             }
-            points = new Point[numberOfPoints];
             
             for (int i = 0; i < numberOfPoints; i++)
             {
                 view.showMessage("Type x and y of " + Integer.toString(i + 1) + " point: ");
-                float x = 0;
-                float y = 0;
+                float x;
+                float y;
                 try
                 {
                     x = scan.nextFloat();
@@ -54,16 +53,15 @@ public class Main
                     view.showError("Error: this is not a number (" + e.getMessage() + ")");
                     return;
                 }
-                points[i] = new Point(x, y);
+                points.add(new Point(x, y));
             }
         }
         else
         {
-            points = new Point[args.length/2];
             for (int i = 0; i < args.length; i += 2)
             {
-                float x = 0;
-                float y = 0;
+                float x;
+                float y;
                 try
                 {
                     x = Float.parseFloat(args[i]);
@@ -74,11 +72,11 @@ public class Main
                     view.showError("Error: this is not a number (" + e.getMessage() + ")");
                     return;
                 }
-                 points[i/2] = new Point(x, y);
+                points.add(new Point(x, y));
             }
         }
         Polygon polygon = new Polygon(points);
-        float result = 0;
+        float result;
         try
         {
             result = polygon.area();

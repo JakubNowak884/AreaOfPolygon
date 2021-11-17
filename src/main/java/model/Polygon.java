@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Polygon class represents polygon in a 2d space.
  *
@@ -10,7 +13,7 @@ public class Polygon {
      /** 
       * Points of the polygon.
       */
-    private Point points[];
+    private List<Point> points;
      /** 
       * Sum of angles of a polygon.
       */
@@ -43,34 +46,33 @@ public class Polygon {
       */
     private boolean polygonIsConvex(double sumOfAngles)
     {
-        return (sumOfAngles == (points.length-2)*180);
+        return (sumOfAngles == (points.size()-2)*180);
     }
     /** 
      * Class constructor forming a 2x2 square with the bottom left corner at the coordinate system origin.
      */
     public Polygon() 
     {
-        points = new Point[4];
-        points[0] = new Point(0, 0);
-        points[1] = new Point(0, 2);
-        points[2] = new Point(2, 2);
-        points[3] = new Point(2, 0);
-        for (int i = 0; i < points.length; i++)
+        points = new ArrayList<>();
+        points.add(new Point(0, 0));
+        points.add(new Point(0, 2));
+        points.add(new Point(2, 2));
+        points.add(new Point(2, 0));
+        for (int i = 0; i < points.size(); i++)
         {
-            sumOfAngles += points[i].angle(points[checkIfOutOfBounds(i-1, points.length)], points[checkIfOutOfBounds(i+1, points.length)]);
+            sumOfAngles += points.get(i).angle(points.get(checkIfOutOfBounds(i-1, points.size())), points.get(checkIfOutOfBounds(i+1, points.size())));
         }
     }
     /** 
      * Class constructor forming a polygon from given points.
      * @param points points of polygon
      */        
-    public Polygon(Point points[])
+    public Polygon(List<Point> points)
     {
-        this.points = new Point[points.length];
-        System.arraycopy(points, 0, this.points, 0, points.length);
-        for (int i = 0; i < points.length; i++)
+        this.points = new ArrayList(points);
+        for (int i = 0; i < points.size(); i++)
         {
-            sumOfAngles += points[i].angle(points[checkIfOutOfBounds(i-1, points.length)], points[checkIfOutOfBounds(i+1, points.length)]);
+            sumOfAngles += points.get(i).angle(points.get(checkIfOutOfBounds(i-1, points.size())), points.get(checkIfOutOfBounds(i+1, points.size())));
         }
     }
     /**
@@ -84,24 +86,24 @@ public class Polygon {
             throw new ConcavePolygonException("given polygon is convex, sum of angles is equal: ", sumOfAngles);
         
         float area = 0;
-        Triangle triangles[] = new Triangle[points.length - 2];
+        List<Triangle> triangles = new ArrayList<>();
         int pC = 0; //points counter
         int nextPoint = 1;
-        for (int i = 0; i < points.length - 2; i++)
+        for (int i = 0; i < points.size() - 2; i++)
         {
-            triangles[i] = new Triangle(points[pC], points[checkIfOutOfBounds(pC + nextPoint, points.length)], points[checkIfOutOfBounds(pC + nextPoint*2, points.length)]);
+            triangles.add(new Triangle(points.get(pC), points.get(checkIfOutOfBounds(pC + nextPoint, points.size())), points.get(checkIfOutOfBounds(pC + nextPoint*2, points.size()))));
             pC += 2;
-            if (pC == points.length)
+            if (pC == points.size())
             {
                 nextPoint *= 2;
                 pC = 0;
             }
-            else if (pC + 1 == points.length)
+            else if (pC + 1 == points.size())
             {
                 nextPoint *= 2;
                 pC--;
             }
-            area += triangles[i].area();
+            area += triangles.get(i).area();
         }
         
         return area;

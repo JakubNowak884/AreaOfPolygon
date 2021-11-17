@@ -20,8 +20,6 @@ public class Point {
      */
     public Point() 
     {
-        x = 0;
-        y = 0;
     }
     /** 
      * Class constructor forming a point from coordinations.
