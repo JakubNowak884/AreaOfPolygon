@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: model.PointTest
+Test set: model.CircularLinkedListTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.088 sec - in model.PointTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 sec - in model.CircularLinkedListTest
