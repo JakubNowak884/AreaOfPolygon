@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: model.PolygonTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.117 sec <<< FAILURE! - in model.PolygonTest
-testConcavePolygonException{Polygon}  Time elapsed: 0.021 sec  <<< ERROR!
-java.lang.NullPointerException
-	at model.PolygonTest.concavePolygonProvider(PolygonTest.java:38)
-
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.108 sec - in model.PolygonTest

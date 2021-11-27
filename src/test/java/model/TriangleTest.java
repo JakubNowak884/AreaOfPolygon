@@ -22,7 +22,7 @@ public class TriangleTest {
     @MethodSource("triangleAndAreaProvider")
     void testAngle(Triangle triangle, float expectedArea) {
         double area = triangle.area();
-        assertEquals(area, expectedArea, 0.01);
+        assertEquals(area, expectedArea, 0.01, "Areas are not equal");
     }
 
     static Stream<Arguments> triangleAndAreaProvider() {

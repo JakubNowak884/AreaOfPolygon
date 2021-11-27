@@ -23,7 +23,7 @@ public class PointTest {
     @MethodSource("pointsAndAngleProvider")
     void testAngle(Point L, Point M, Point R, double expectedAngle) {
         double angle = M.angle(L, R);
-        assertEquals(expectedAngle, angle, 0.01);
+        assertEquals(expectedAngle, angle, 0.01, "Angles are not equal");
     }
 
     static Stream<Arguments> pointsAndAngleProvider() {

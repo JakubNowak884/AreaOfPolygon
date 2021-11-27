@@ -33,8 +33,8 @@ public class CircularLinkedListTest {
      */
     @Test
     public void testGetPrev() {
-        assertSame(list.getPrev(list.getFirst()), list.getLast());
-        assertSame(list.getPrev(list.get(1)), list.getFirst());
+        assertSame(list.getPrev(list.getFirst()), list.getLast(), "Previous elemenent of the first element of the list isn't equal last");
+        assertSame(list.getPrev(list.get(1)), list.getFirst(), "Previous element of first element isn't equal first element");
     }
 
     /**
@@ -42,7 +42,7 @@ public class CircularLinkedListTest {
      */
     @Test
     public void testGetNext() {
-        assertSame(list.getNext(list.getLast()), list.getFirst());
-        assertSame(list.getNext(list.getFirst()), list.get(1));
+        assertSame(list.getNext(list.getLast()), list.getFirst(), "Next elemenent of the lat element of the list isn't equal first");
+        assertSame(list.getNext(list.getFirst()), list.get(1), "Next element of first element isn't equal second element");
     }
 }

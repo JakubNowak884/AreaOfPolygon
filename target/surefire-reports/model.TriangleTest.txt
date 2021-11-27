@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: model.TriangleTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.096 sec - in model.TriangleTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.099 sec - in model.TriangleTest

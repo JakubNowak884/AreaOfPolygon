@@ -1,12 +1,13 @@
 package model;
 
+import java.util.List;
 import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.NullSource;
 
 /**
  * PolygonTest tests the methods of polygon class.
@@ -20,7 +21,6 @@ public class PolygonTest {
      * Test to check if method area throws an exception when polygon is concave.
      */
     @ParameterizedTest
-
     @MethodSource("concavePolygonProvider")
     public void testConcavePolygonException(Polygon concavePolygon) {
         try {
@@ -28,15 +28,13 @@ public class PolygonTest {
             fail("Exception should be thrown");
         } catch (ConcavePolygonException e) {
 
-        } catch (NullPointerException e) {
-
         }
     }
 
     static Stream<Arguments> concavePolygonProvider() {
         return Stream.of(
                 arguments(new Polygon(new Point(0.0f, 0.0f))),
-                arguments(new Polygon(null, new Point(0.0f, 0.0f))),
+                arguments(new Polygon(new Point(0.0f, 0.0f), new Point(0.0f, 0.0f))),
                 arguments(new Polygon(new Point(0.0f, 0.0f), new Point(0.0f, 0.0f), new Point(0.0f, 0.0f))),
                 arguments(new Polygon(new Point(0.0f, 0.0f), new Point(2.0f, 0.0f), new Point(5.0f, 0.0f), new Point(8.0f, 0.0f))),
                 arguments(new Polygon(new Point(0.0f, 0.0f), new Point(0.0f, 2.0f), new Point(1.0f, 1.0f), new Point(2.0f, 2.0f), new Point(2.0f, 0.0f))));
@@ -51,7 +49,7 @@ public class PolygonTest {
     public void testConvexPolygonException(Polygon convexPolygon, float expectedArea) {
         try {
             float area = convexPolygon.area();
-            assertEquals(expectedArea, area);
+            assertEquals(expectedArea, area, "Areas are not equal");
         } catch (ConcavePolygonException e) {
             fail("ConcavePolygonException should not be thrown");
         }
