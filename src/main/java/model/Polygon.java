@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -37,8 +38,7 @@ public class Polygon {
     }
 
     /**
-     * Class constructor forming a 2x2 square with the bottom left corner at the
-     * coordinate system origin.
+     * Class constructor forming a 2x2 square with the bottom left corner at the coordinate system origin.
      */
     public Polygon() {
         points = new CircularLinkedList<>();
@@ -56,9 +56,8 @@ public class Polygon {
     public Polygon(Point... points) {
 
         this.points = new CircularLinkedList<>();
-
-        for (int i = 0; i < points.length; i++) {
-            this.points.add(points[i]);
+        if (points != null) {
+            this.points.addAll(Arrays.asList(points));
         }
     }
 
@@ -69,7 +68,9 @@ public class Polygon {
      */
     public Polygon(List<Point> points) {
         this.points = new CircularLinkedList();
-        this.points.addAll(points);
+        if (points != null) {
+            this.points.addAll(points);
+        }
     }
 
     public void setPointX(int index, float x) {
@@ -93,8 +94,7 @@ public class Polygon {
     /**
      * Method calculates area of a polygon.
      *
-     * @throws ConcavePolygonException when polygon is concave, which means its
-     * area cannot be calculated.
+     * @throws ConcavePolygonException when polygon is concave, which means its area cannot be calculated.
      * @return area of a polygon
      */
     public float area() throws ConcavePolygonException {
