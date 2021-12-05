@@ -15,10 +15,6 @@ public class Polygon {
      * Points of the polygon.
      */
     private CircularLinkedList<Point> points;
-    /**
-     * Sum of angles of a polygon.
-     */
-    private double sumOfAngles;
 
     /**
      * Method checks if polygon is convex.
@@ -27,7 +23,17 @@ public class Polygon {
      * @return true if polygon is convex, false if polygon is concave
      */
     private boolean polygonIsConvex(double sumOfAngles) {
-        return (sumOfAngles == (points.size() - 2) * 180);
+        double epsilon = 0.00001;
+        double diff = sumOfAngles - ((points.size() - 2) * 180);
+        return (Math.abs(diff) < epsilon);
+    }
+
+    private double sumOfAngles() {
+        double sumOfAngles = 0.0f;
+        for (Point point : points) {
+            sumOfAngles += point.angle(points.getPrev(point), points.getNext(point));
+        }
+        return sumOfAngles;
     }
 
     /**
@@ -40,10 +46,6 @@ public class Polygon {
         points.add(new Point(0, 2));
         points.add(new Point(2, 2));
         points.add(new Point(2, 0));
-
-        for (Point point : points) {
-            sumOfAngles += point.angle(points.getPrev(point), points.getNext(point));
-        }
     }
 
     /**
@@ -58,10 +60,6 @@ public class Polygon {
         for (int i = 0; i < points.length; i++) {
             this.points.add(points[i]);
         }
-
-        for (Point point : this.points) {
-            sumOfAngles += point.angle(this.points.getPrev(point), this.points.getNext(point));
-        }
     }
 
     /**
@@ -72,10 +70,24 @@ public class Polygon {
     public Polygon(List<Point> points) {
         this.points = new CircularLinkedList();
         this.points.addAll(points);
+    }
 
-        for (Point point : this.points) {
-            sumOfAngles += point.angle(this.points.getPrev(point), this.points.getNext(point));
-        }
+    public void setPointX(int index, float x) {
+        Point point = points.get(index);
+        point.setX(x);
+    }
+
+    public void setPointY(int index, float y) {
+        Point point = points.get(index);
+        point.setY(y);
+    }
+
+    public void AddPoint(Point point) {
+        points.add(point);
+    }
+
+    public void RemovePoint() {
+        points.remove(points.getLast());
     }
 
     /**
@@ -86,6 +98,7 @@ public class Polygon {
      * @return area of a polygon
      */
     public float area() throws ConcavePolygonException {
+        double sumOfAngles = sumOfAngles();
         if (!polygonIsConvex(sumOfAngles)) {
             throw new ConcavePolygonException("Given polygon is convex, sum of angles is equal: ", sumOfAngles);
         }

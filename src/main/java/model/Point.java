@@ -52,6 +52,14 @@ public class Point {
         return y;
     }
 
+    public void setX(float x) {
+        this.x = x;
+    }
+
+    public void setY(float y) {
+        this.y = y;
+    }
+
     /**
      * Method calculating angle between middle point and two other points.
      *
