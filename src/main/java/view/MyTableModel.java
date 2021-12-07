@@ -8,7 +8,8 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Kuba
+ * @author Jakub Nowak gr 5
+ * @version 2.0
  */
 public class MyTableModel extends DefaultTableModel {
 

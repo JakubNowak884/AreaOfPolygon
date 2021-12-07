@@ -141,6 +141,7 @@ public class AreaOfPolygon extends JPanel implements ActionListener, TableModelL
          //view = new View();
          polygon = new Polygon(new Point(0.0f, 0.0f), new Point(1.0f, 1.0f), new Point(2.0f, 0.0f));
          javax.swing.SwingUtilities.invokeLater(new Runnable() {
+             @Override
             public void run() {
                 createAndShowGUI();
             }

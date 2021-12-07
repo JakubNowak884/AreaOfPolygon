@@ -29,6 +29,11 @@ public class Polygon {
         return (Math.abs(diff) < epsilon);
     }
 
+    /**
+     * Method calculates sum of angles of the polygon
+     *
+     * @return sum of angles of the polygon
+     */
     private double sumOfAngles() {
         double sumOfAngles = 0.0f;
         for (Point point : points) {
@@ -73,20 +78,40 @@ public class Polygon {
         }
     }
 
+    /**
+     * Method sets value on x axis of point at given index
+     *
+     * @param index index of the point
+     * @param x value to set
+     */
     public void setPointX(int index, float x) {
         Point point = points.get(index);
         point.setX(x);
     }
 
+    /**
+     * Method sets value on y axis of point at given index
+     *
+     * @param index index of the point
+     * @param y value to set
+     */
     public void setPointY(int index, float y) {
         Point point = points.get(index);
         point.setY(y);
     }
 
+    /**
+     * Method adds point to the polygon
+     *
+     * @param point point to add
+     */
     public void AddPoint(Point point) {
         points.add(point);
     }
 
+    /**
+     * Method removes last point from the polygon
+     */
     public void RemovePoint() {
         points.remove(points.getLast());
     }
