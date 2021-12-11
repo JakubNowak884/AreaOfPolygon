@@ -8,7 +8,7 @@ import java.util.List;
  * Polygon class represents polygon in a 2d space.
  *
  * @author Jakub Nowak gr 5
- * @version 2.0
+ * @version 3.0
  */
 public class Polygon {
 
@@ -43,7 +43,8 @@ public class Polygon {
     }
 
     /**
-     * Class constructor forming a 2x2 square with the bottom left corner at the coordinate system origin.
+     * Class constructor forming a 2x2 square with the bottom left corner at the
+     * coordinate system origin.
      */
     public Polygon() {
         points = new CircularLinkedList<>();
@@ -101,6 +102,34 @@ public class Polygon {
     }
 
     /**
+     * Method returns number of points of polygon.
+     *
+     * @return number of points of polygon
+     */
+    public int getNumberOfPoints() {
+        return points.size();
+    }
+
+    /**
+     * Method return point of the polygon at given index.
+     *
+     * @param index index of the point
+     * @return points of the polygon
+     */
+    public Point getPoint(int index) {
+        return points.get(index);
+    }
+    
+    /**
+     * Method return list of points of the polygon.
+     *
+     * @return points of the polygon
+     */
+    public CircularLinkedList<Point> getPoints() {
+        return points;
+    }
+
+    /**
      * Method adds point to the polygon
      *
      * @param point point to add
@@ -119,7 +148,8 @@ public class Polygon {
     /**
      * Method calculates area of a polygon.
      *
-     * @throws ConcavePolygonException when polygon is concave, which means its area cannot be calculated.
+     * @throws ConcavePolygonException when polygon is concave, which means its
+     * area cannot be calculated.
      * @return area of a polygon
      */
     public float area() throws ConcavePolygonException {

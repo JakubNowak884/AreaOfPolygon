@@ -4,7 +4,7 @@ package model;
  * Point class represents point in a 2d space.
  *
  * @author Jakub Nowak gr 5
- * @version 2.0
+ * @version 3.0
  */
 public class Point {
 

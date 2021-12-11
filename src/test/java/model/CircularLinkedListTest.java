@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
  * CircularLinkedListTest tests the methods of CircularLinkedList class.
  *
  * @author Jakub Nowak gr 5
- * @version 2.0
+ * @version 3.0
  */
 public class CircularLinkedListTest {
 

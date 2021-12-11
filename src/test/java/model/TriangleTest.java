@@ -11,7 +11,7 @@ import org.junit.jupiter.params.provider.MethodSource;
  * TriangleTest tests the methods of triangle class.
  *
  * @author Jakub Nowak gr 5
- * @version 2.0
+ * @version 3.0
  */
 public class TriangleTest {
 

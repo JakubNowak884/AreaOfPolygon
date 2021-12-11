@@ -11,7 +11,7 @@ import org.junit.jupiter.params.provider.MethodSource;
  * PointTest tests the methods of point class.
  *
  * @author Jakub Nowak gr 5
- * @version 2.0
+ * @version 3.0
  */
 public class PointTest {
 

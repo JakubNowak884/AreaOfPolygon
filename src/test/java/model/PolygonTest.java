@@ -1,9 +1,7 @@
 package model;
 
-import java.util.List;
 import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
@@ -13,7 +11,7 @@ import org.junit.jupiter.params.provider.MethodSource;
  * PolygonTest tests the methods of polygon class.
  *
  * @author Jakub Nowak gr 5
- * @version 2.0
+ * @version 3.0
  */
 public class PolygonTest {
 
