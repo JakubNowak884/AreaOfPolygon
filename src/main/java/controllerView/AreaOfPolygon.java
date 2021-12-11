@@ -301,7 +301,7 @@ public class AreaOfPolygon extends JPanel implements ActionListener, TableModelL
      * 
      * For safety reasons it should be called from the thread that sends out the event.
      */
-    public static void createAndShowGUI() {
+     private static void createAndShowGUI() {
         JFrame.setDefaultLookAndFeelDecorated(true);
 
         JFrame frame = new JFrame("Area Of Polygon");

@@ -52,10 +52,20 @@ public class Point {
         return y;
     }
 
+    /**
+     * Method sets value on X axis of the point.
+     *
+     * @param x given value
+     */
     public void setX(float x) {
         this.x = x;
     }
 
+    /**
+     * Method sets value on Y axis of the point.
+     *
+     * @param y given value
+     */
     public void setY(float y) {
         this.y = y;
     }

@@ -22,9 +22,9 @@ class MyTableModel extends DefaultTableModel {
 
     /**
      * Method returns class of the modified cell
-     * 
+     *
      * @param c number of the column in the table
-     * @return 
+     * @return
      */
     @Override
     public Class getColumnClass(int c) {
@@ -32,8 +32,9 @@ class MyTableModel extends DefaultTableModel {
     }
 
     /**
-     * Method allows to modify only cells that do not belong to the first column.
-     * 
+     * Method allows to modify only cells that do not belong to the first
+     * column.
+     *
      * @param row number of the modified row
      * @param col number of the modified column
      * @return false is cell belongs to first column otherwise false

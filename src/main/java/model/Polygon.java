@@ -119,7 +119,7 @@ public class Polygon {
     public Point getPoint(int index) {
         return points.get(index);
     }
-    
+
     /**
      * Method return list of points of the polygon.
      *
